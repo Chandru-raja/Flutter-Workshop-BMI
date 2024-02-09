@@ -1,6 +1,5 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
-
-import 'constants.dart';
 
 class RoundIconButton extends StatelessWidget {
   RoundIconButton({this.child, required this.Onpressed});
@@ -20,3 +19,15 @@ class RoundIconButton extends StatelessWidget {
     );
   }
 }
+
+// GestureDetector(
+// onTap: () {
+// Onpressed();
+// },
+// child: Container(
+// padding: EdgeInsets.all(7),
+// decoration: BoxDecoration(
+// color: Colors.grey, borderRadius: BorderRadius.circular(50)),
+// child: child,
+// ),
+// );

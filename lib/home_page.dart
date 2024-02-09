@@ -31,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
       } else {
         malecc = kInactive;
       }
+      // malecc = (malecc == kInactive) ? const Color(kFgcol) : kInactive;
       femalecc = kInactive;
     } else {
       if (femalecc == kInactive) {
@@ -46,7 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('BMI CALCULATOR')),
+        title: const Center(
+            child: Text(
+          'BMI CALCULATOR',
+          style: TextStyle(color: Colors.white),
+        )),
         backgroundColor: const Color(kBgcol),
       ),
       body: Column(
@@ -109,24 +114,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       const Text("cm", style: kCostomTxtbox),
                     ],
                   ),
-                  SliderTheme(
-                    data: SliderTheme.of(context).copyWith(
-                        thumbShape: const RoundSliderThumbShape(
-                          enabledThumbRadius: 15.0,
-                        ),
-                        trackHeight: 1),
-                    child: Slider(
-                      value: height.toDouble(),
-                      min: 120,
-                      max: 220,
-                      activeColor: const Color(0xFFEB1555),
-                      inactiveColor: const Color(0xFF8D8E98),
-                      onChanged: (double newvalue) {
-                        setState(() {
-                          height = newvalue.round();
-                        });
-                      },
-                    ),
+                  Slider(
+                    value: height.toDouble(),
+                    min: 120,
+                    max: 220,
+                    activeColor: const Color(0xFFEB1555),
+                    inactiveColor: const Color(0xFF8D8E98),
+                    onChanged: (double newvalue) {
+                      setState(() {
+                        height = newvalue.round();
+                      });
+                    },
                   )
                 ],
               ),
